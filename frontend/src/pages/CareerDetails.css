@@ -1,0 +1,124 @@
+.career-details-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Header section */
+.career-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.career-description {
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+/* Grid layout for details */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Detail cards */
+.detail-card {
+  background-color: var(--elevated);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.detail-card h3 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.detail-card p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Salary value */
+.detail-card .salary {
+  color: var(--text);
+  border-left: 3px solid #000;
+  padding-left: 0.5rem;
+}
+
+/* Skills section */
+.skills-section {
+  margin-top: 2rem;
+}
+
+.skills-section h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  background-color: var(--surface);
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 500;
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-title {
+    font-size: 2.4rem;
+  }
+
+  .career-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .detail-card p {
+    font-size: 1.2rem;
+  }
+
+  .skills-section h3 {
+    font-size: 1.4rem;
+  }
+}

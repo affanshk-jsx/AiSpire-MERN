@@ -1,0 +1,131 @@
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 6rem 1rem;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+/* Subtle black gradient highlight for the brand word */
+.hero-highlight {
+  background: linear-gradient(to right, #222, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  font-weight: 400;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* CTA Button */
+.hero-cta {
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #000;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  border: 1px solid #000;
+  transition: all 0.25s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  background-color: #111;
+  border-color: #111;
+}
+
+/* Info Section */
+.info-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.info-card {
+  background-color: var(--elevated);
+  padding: 2.5rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.info-card h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.info-card p {
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.info-link {
+  font-weight: 600;
+  text-decoration: underline;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.info-link:hover {
+  color: #000;
+  text-decoration-thickness: 2px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .info-section {
+    grid-template-columns: 1fr;
+    padding: 3rem 0;
+  }
+
+  .info-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.7rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.6rem;
+  }
+}

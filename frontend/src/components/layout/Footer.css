@@ -1,0 +1,95 @@
+/* -----------------------------
+   Footer Container
+----------------------------- */
+.footer {
+  background-color: var(--elevated);
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  padding: 2rem 0;
+  margin-top: auto;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* -----------------------------
+   Footer Inner Layout
+----------------------------- */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* -----------------------------
+   Footer Text
+----------------------------- */
+.footer small {
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+/* -----------------------------
+   Footer Links
+----------------------------- */
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+}
+
+/* -----------------------------
+   Hover Animation (optional subtle lift)
+----------------------------- */
+.footer-links a {
+  position: relative;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* -----------------------------
+   Responsive Adjustments
+----------------------------- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

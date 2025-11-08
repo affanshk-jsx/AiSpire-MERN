@@ -1,0 +1,275 @@
+/* -----------------------------
+   Global Layout (sticky header + sticky footer)
+----------------------------- */
+
+html, body, #root { height: 100%; }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, .app-main {
+  flex: 1 0 auto; /* pushes footer to the bottom */
+}
+
+/* -----------------------------
+   Theme Tokens (Black & White)
+   - Includes legacy tokens your components already use
+----------------------------- */
+:root {
+  /* New monochrome tokens */
+  --bg: #ffffff;
+  --elevated: #ffffff;
+  --surface: #f6f6f6;
+  --border: #e6e6e6;
+  --text: #111111;
+  --muted: #6b6b6b;
+  --focus: #11111133;
+  --shadow: 0 6px 20px rgba(0,0,0,0.06);
+  --radius: 12px;
+
+  /* Legacy tokens (kept for compatibility) */
+  --primary-color: #000000;
+  --secondary-color: #000000;
+  --off-white: #ffffff;
+  --grey: #6b6b6b;
+
+  /* Convenience */
+  --black: #000000;
+  --white: #ffffff;
+}
+
+/* -----------------------------
+   Base
+----------------------------- */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* -----------------------------
+   Page Header
+----------------------------- */
+
+.page-header {
+  text-align: center;
+  padding: 2.5rem 0 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.page-header p {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* -----------------------------
+   Buttons
+----------------------------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform .06s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+  border: 1px solid transparent;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background-color: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.btn-primary:hover {
+  background-color: #111;
+  border-color: #111;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* -----------------------------
+   Navbar (supports both .site-navbar and .header/.navbar)
+----------------------------- */
+
+.site-navbar,
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--elevated);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: saturate(140%) blur(6px);
+}
+
+.site-navbar .container,
+.header .navbar,
+.header .container {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header .navbar { /* if you use .header + .navbar markup */
+  height: 64px;
+}
+
+.navbar .brand,
+.site-navbar .brand {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.navbar ul,
+.site-navbar ul {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  list-style: none;
+}
+
+.navbar a,
+.site-navbar a {
+  padding: .45rem .7rem;
+  border-radius: 8px;
+  color: var(--text);
+}
+
+.navbar a:hover,
+.site-navbar a:hover {
+  background: #f2f2f2;
+  text-decoration: none;
+}
+
+.navbar .active,
+.site-navbar .active {
+  background: #111;
+  color: #fff;
+}
+
+/* -----------------------------
+   Footer (supports both .site-footer and .footer/.footer-inner)
+----------------------------- */
+
+.site-footer,
+.footer {
+  margin-top: auto;
+  background: var(--elevated);
+  border-top: 1px solid var(--border);
+}
+
+.site-footer .container,
+.footer .footer-inner,
+.footer .container {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer small,
+.site-footer small {
+  color: var(--muted);
+}
+
+/* -----------------------------
+   Cards & Tables (generic)
+----------------------------- */
+
+.card {
+  background: var(--elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.table th, .table td {
+  padding: .9rem 1rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.table thead th {
+  background: var(--surface);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* -----------------------------
+   Forms (generic)
+----------------------------- */
+
+.form-group { margin-bottom: 1rem; }
+
+label { display: block; margin-bottom: .45rem; font-weight: 600; color: var(--text); }
+
+input, select, textarea {
+  width: 100%;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .85rem .95rem;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+input::placeholder, textarea::placeholder { color: #9a9a9a; }
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--text);
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+/* -----------------------------
+   Utilities
+----------------------------- */
+
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace; }
+.mt-1{ margin-top:.25rem } .mt-2{ margin-top:.5rem } .mt-3{ margin-top:.75rem } .mt-4{ margin-top:1rem }
+.mb-1{ margin-bottom:.25rem } .mb-2{ margin-bottom:.5rem } .mb-3{ margin-bottom:.75rem } .mb-4{ margin-bottom:1rem }

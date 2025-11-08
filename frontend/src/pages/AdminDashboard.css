@@ -1,0 +1,103 @@
+.admin-dashboard .admin-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--elevated);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.admin-dashboard h2 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.admin-dashboard th,
+.admin-dashboard td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  color: var(--text);
+  background-color: #fff;
+}
+
+.admin-dashboard th {
+  background-color: var(--surface);
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.admin-dashboard tbody tr:hover {
+  background-color: #f7f7f7;
+  transition: background-color 0.2s ease;
+}
+
+/* Add subtle highlight for important rows (optional) */
+.admin-dashboard tbody tr.important {
+  background-color: #fafafa;
+  border-left: 4px solid #000;
+}
+
+/* Action buttons in admin panel */
+.admin-dashboard .btn {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.admin-dashboard .btn-view {
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+}
+
+.admin-dashboard .btn-view:hover {
+  background: #111;
+  border-color: #111;
+}
+
+.admin-dashboard .btn-delete {
+  background: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.admin-dashboard .btn-delete:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard .admin-section {
+    padding: 1.5rem;
+  }
+
+  .admin-dashboard h2 {
+    font-size: 1.25rem;
+  }
+
+  .admin-dashboard th,
+  .admin-dashboard td {
+    padding: 0.7rem 0.8rem;
+  }
+}

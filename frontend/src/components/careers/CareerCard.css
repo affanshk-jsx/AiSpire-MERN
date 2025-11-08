@@ -1,0 +1,108 @@
+/* -----------------------------
+   Career Card (for listing view)
+----------------------------- */
+.career-card {
+  background-color: var(--elevated);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: var(--shadow);
+}
+
+.career-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* -----------------------------
+   Card Header
+----------------------------- */
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* -----------------------------
+   Footer (Salary + Link)
+----------------------------- */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  padding-top: 1.2rem;
+}
+
+.card-salary {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* -----------------------------
+   Link Button
+----------------------------- */
+.card-link {
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid var(--black);
+  color: var(--black);
+  background: transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.card-link:hover {
+  background-color: var(--black);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* -----------------------------
+   Responsive
+----------------------------- */
+@media (max-width: 768px) {
+  .career-card {
+    padding: 1.75rem;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .card-link {
+    width: 100%;
+    text-align: center;
+  }
+}

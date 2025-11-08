@@ -1,0 +1,129 @@
+.contact-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+  margin: 2rem 0 3rem;
+}
+
+/* Contact Form */
+.contact-form {
+  background-color: var(--elevated);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fff;
+  color: var(--text);
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--text);
+  box-shadow: 0 0 0 4px var(--focus);
+  outline: none;
+}
+
+/* Submit Button */
+.contact-form .btn-submit {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.25s ease;
+}
+
+.contact-form .btn-submit:hover {
+  background-color: #111;
+  border-color: #111;
+  transform: translateY(-1px);
+}
+
+/* Contact Info Sidebar */
+.contact-info {
+  background-color: var(--elevated);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-info h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+.contact-info p {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.contact-info ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.contact-info ul li {
+  margin-bottom: 0.9rem;
+  color: var(--muted);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info ul li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Optional subtle divider between form and info */
+@media (max-width: 992px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .contact-form,
+  .contact-info {
+    padding: 1.5rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+}
