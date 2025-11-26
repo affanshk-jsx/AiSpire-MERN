@@ -1,9 +1,8 @@
-// backend/controllers/adminController.js
 import asyncHandler from 'express-async-handler';
-import Career from '../models/careerModel.js';
+import Career from '../models/Career.js';
 import Appointment from '../models/Appointment.js';
 import User from '../models/userModel.js';
-import Assessment from '../models/assessmentModel.js';
+import Assessment from '../models/Assessment.js';
 
 export const adminHealth = asyncHandler(async (_req, res) => {
   res.json({ ok: true });

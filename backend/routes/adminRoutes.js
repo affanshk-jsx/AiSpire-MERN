@@ -1,4 +1,3 @@
-// backend/routes/adminRoutes.js
 import express from 'express';
 import { protect, admin } from '../middleware/authMiddleware.js';
 import {
@@ -21,7 +20,7 @@ const router = express.Router();
 // All admin routes require auth + admin
 router.use(protect, admin);
 
-// simple health check to verify mount quickly
+// simple health check
 router.get('/health', adminHealth);
 
 /** Careers CRUD */
